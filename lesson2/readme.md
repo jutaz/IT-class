@@ -2,7 +2,7 @@
 
 ## Data given
 * Text file
-* Format: "Name 10 10 10 10 10 10" (without quotes)
+* Format: "Name 10 10 10 10 10 10 \n" (without quotes)
 
 ## Tasks
 * Find best student by calculating average marks

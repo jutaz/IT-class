@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=1 pamoka
+PROJECTNAME=lesson1
 
 # Active Configuration
 DEFAULTCONF=Debug

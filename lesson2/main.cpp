@@ -15,13 +15,7 @@ int main(int argc, char** argv) {
     map<int, int> file = read_file("./data.txt");
     int length = file.size();
     for (int i = 0; i < length; i++) {
-        cout << i << endl;
         cout << file[i] << endl;
-        if (file[i] % 2 != 0) {
-            odds = (file[i] * odds);
-        } else {
-            evens = (file[i] + evens);
-        }
     }
     return 0;
 }

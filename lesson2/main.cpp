@@ -17,7 +17,6 @@ bool has_only_good_marks(vector<int> data);
 
 int main(int argc, char** argv) {
     map<string, vector<int> > file = read_file("./data.txt");
-    int length = file.size();
     string maxAvgName = "";
     float maxAvg = 0;
     map<string, vector<int> >::iterator iter;

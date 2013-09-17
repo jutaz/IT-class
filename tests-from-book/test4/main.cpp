@@ -29,6 +29,7 @@ int process(vector<number> data) {
         bool matchFound = false;
         for (int e = 0; e < usedNumbers.size(); e++) {
             if (data[i].num == usedNumbers[e]) {
+                usedNumbers.erase(usedNumbers.begin() + e);
                 matchFound = true;
                 break;
             }
@@ -37,14 +38,14 @@ int process(vector<number> data) {
             bool found = false;
             int times = 0;
             for (int c = i; c != -1; c--) {
-                if(times == 2) {
-                    break;
-                }
-                if(data[c].has_pair) {
+                if (data[c].has_pair || times == 2) {
                     continue;
+                } else {
                 }
-                if(data[c].num == data[i].num && !data[c].has_pair) {
+                if (data[c].num == data[i].num) {
                     found = true;
+                } else {
+                    found = false;
                 }
                 if (data[c].num == data[i].num && found) {
                     times++;
@@ -57,8 +58,7 @@ int process(vector<number> data) {
     }
     for (int d = 0; d < data.size(); d++) {
         if (!data[d].has_pair) {
-            cout << data[d].num << endl;
-//            return data[d].num;
+            return data[d].num;
         }
     }
     return 0;

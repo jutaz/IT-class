@@ -12,7 +12,7 @@ int ord(unsigned char chr);
 
 int main(int argc, char** argv) {
     vector<int> data = read_file("./data.txt");
-    cout << (char) data[0] <<endl;
+//    cout << (char) data[0] <<endl;
     return 0;
 }
 
@@ -24,11 +24,8 @@ vector<int> read_file(char* filename) {
     file.open(filename);
     while(!file.eof()) {
         getline(file, line, '\n');
-        const char* x =line.c_str();
-        unsigned char* tmp;
-        tmp = (unsigned char) x;
-        cout << ord(tmp) <<endl;
-        data.push_back((int) tmp);
+        cout << (int) line[0] <<endl;
+//        data.push_back((int) tmp);
     }
     return data;
 }

@@ -4,15 +4,20 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
 vector<int> read_file(char* filename);
-int ord(unsigned char chr);
+bool write_file(string data, char* filename);
 
 int main(int argc, char** argv) {
+    stringstream tmp;
     vector<int> data = read_file("./data.txt");
-//    cout << (char) data[0] <<endl;
+    for (int i =0; i< data.size(); i++) {
+        tmp << (char) data[i] << " --> " << data[i] << endl;
+    }
+    write_file(tmp.str(), "./results.txt");
     return 0;
 }
 
@@ -24,17 +29,18 @@ vector<int> read_file(char* filename) {
     file.open(filename);
     while(!file.eof()) {
         getline(file, line, '\n');
-        cout << (int) line[0] <<endl;
-//        data.push_back((int) tmp);
+        data.push_back((int) line[0]);
     }
     return data;
 }
 
 bool write_file(string data, char* filename) {
-
-}
-
-int ord(unsigned char chr) {
-    int ret = int(chr);
-    return ret;
+    ofstream file;
+    file.open(filename);
+    if(file.is_open()) {
+        file << data;
+        file.close();
+        return true;
+    }
+    return false;
 }
